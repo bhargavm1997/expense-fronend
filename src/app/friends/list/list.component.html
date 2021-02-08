@@ -1,0 +1,40 @@
+
+<app-dashboard></app-dashboard>
+
+
+
+    
+    <div class="container">
+      <h2>Friend List</h2>
+      <p>The table contains the list of friends.</p>            
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of this.a">
+            <td>{{a.firstname}}</td>
+           
+            <td>{{a.email}}</td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+    
+   
+    
+
+
+
+
+
+
+
+
+
+

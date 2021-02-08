@@ -1,0 +1,26 @@
+<app-dashboard></app-dashboard>
+
+
+
+    
+    <div class="container">
+      <h2>Group List</h2>
+      <p>The table contains the group of friends.</p>            
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Group name</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of this.a">
+            <td >
+                <a [routerLink]="['/singleView',a._id]" >{{a.groupName}}</a></td>
+           
+          
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>

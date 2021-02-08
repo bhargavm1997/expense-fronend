@@ -1,0 +1,63 @@
+<app-dashboard></app-dashboard>
+
+
+
+
+<div class="form-group">
+    <label for="email">Expense Name:</label>
+    <input  *ngIf="this.b" type="text" class="form-control" [(ngModel)]="this.b.expName">
+  </div>
+
+
+<div  *ngIf="this.c">
+    <label for="Select Group">Group</label>
+  <select (change)="groupSelect($event.target.value)" [(ngModel)]="this.c._id"  class="form-control" >
+      
+      <option  value="0" disabled> Select Group</option>
+      <option   [value]="this.c._id" > {{this.c.groupName}}</option>
+  </select>
+
+</div>
+
+
+<div  *ngIf="this.b">
+<label for="amount">Amount</label>
+<input type="number" class="form-control" [(ngModel)]="this.b.amount">
+
+
+</div>
+
+
+
+  
+<div class="form-group">
+    <label class="col-md-4 control-label" for="rolename">Friends Name</label>
+    <div class="col-md-4">
+        <select *ngIf="this.c" [(ngModel)]="this.c.users" id="dates-field2" class="form-control" multiple="true">
+            <option *ngFor="let a of this.friend"  [value]="a._id" >{{a.firstname}}</option>
+            
+        </select>
+    </div>
+
+
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div class="form-group">
+    <label class="col-md-4 control-label" for="Select Group">select paid by</label>
+  <select  *ngIf="this.f"  [(ngModel)]="this.f._id" class="form-control" >
+      
+      <option  value="0" disabled> Paid By</option>
+      <option  [value]="this.f._id" > {{this.f.firstname}}</option>
+  </select>
+
+</div>
+
+
+
+<button (click)="editExpense()" type="submit" class="btn btn-default">Submit</button>

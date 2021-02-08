@@ -1,0 +1,35 @@
+
+<app-dashboard></app-dashboard>
+
+
+
+
+    
+<div class="container">
+    <h2>Expense List</h2>
+    <p>The table contains the group of friends.</p>            
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Expense Name</th>
+          <th>Amount</th>
+         <th>Paid By</th> 
+ 
+         <th>Action</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of this.a">
+          <td >
+              <a [routerLink]="['/singleView',a._id]" >{{a.expName}}</a>
+        </td>
+        <td>{{a.amount}}</td> 
+              <td *ngIf="this.c">{{this.c.firstname}}</td>
+              <td><button  [routerLink]="['/edit/',a._id]">Edit</button></td>
+              <td><button (click)="delete(a._id)" >Delete</button></td>
+        
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>

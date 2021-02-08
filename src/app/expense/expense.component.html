@@ -1,0 +1,63 @@
+<app-dashboard></app-dashboard>
+
+
+
+
+<div class="form-group">
+    <label for="email">Expense Name:</label>
+    <input  type="text" class="form-control" [(ngModel)]="expense">
+  </div>
+
+
+<div>
+    <label for="Select Group">Group</label>
+  <select (change)="groupSelect($event.target.value)" [(ngModel)]="group"  class="form-control" >
+      
+      <option  value="0" disabled> Select Group</option>
+      <option  *ngFor="let b of this.a" [value]="b._id" > {{b.groupName}}</option>
+  </select>
+
+</div>
+
+
+<div>
+<label for="amount">Amount</label>
+<input type="number" class="form-control" [(ngModel)]="amount">
+
+
+</div>
+
+
+
+  
+<div class="form-group">
+    <label class="col-md-4 control-label" for="rolename">Friends Name</label>
+    <div class="col-md-4">
+        <select [(ngModel)]="friendName" id="dates-field2" class="form-control" multiple="true">
+            <option *ngFor="let b of this.friendsArray"  [value]="b._id" >{{b.firstname}}</option>
+            
+        </select>
+    </div>
+
+
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div class="form-group">
+    <label class="col-md-4 control-label" for="Select Group">select paid by</label>
+  <select  [(ngModel)]="paid"  class="form-control" >
+      
+      <option  value="0" disabled> Paid By</option>
+      <option  *ngFor="let b of this.paidBy" [value]="b._id" > {{b.firstname}}</option>
+  </select>
+
+</div>
+
+
+
+<button (click)="addExpense()" type="submit" class="btn btn-default">Submit</button>
